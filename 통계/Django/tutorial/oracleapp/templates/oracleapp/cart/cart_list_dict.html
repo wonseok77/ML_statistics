@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>주문내역 리스트 조회하기</title>
+</head>
+
+<body>
+    <p>주문 목록</p>
+    <a href="/oracle/cart_insert_form/">[글쓰기]</a>
+    <table border="1">
+        <tr style="background-color:yellow;">
+            <th>회원아이디</th>
+            <th>주문번호</th>
+            <th>상품코드</th>
+            <th>주문수량</th>
+            <th>삭제</th>
+        </tr>
+        {% for d in df_list %}
+        <tr>
+            <td>
+                <a href="http://127.0.0.1:8000/oracle/cart?pcart_no={{d.cart_no}}&pcart_prod={{d.cart_prod}}">
+                    {{d.cart_member}}</a>
+            </td>
+            <td>{{d.cart_no}}</td>
+            <td>{{d.cart_prod}}</td>
+            <td>{{d.cart_qty}}</td>
+            <td>
+                <a href="http://127.0.0.1:8000/oracle/cart_delete?pcart_no={{d.cart_no}}&pcart_prod={{d.cart_prod}}">
+                    [삭제]</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

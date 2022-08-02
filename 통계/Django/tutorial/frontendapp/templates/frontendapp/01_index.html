@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<!-- static 폴더의 데이터 활용하기 -->
+{% load static %}
+
+<html>
+<!-- 브라우저에서 html 실행 시 가장 먼저 읽어 들이는 곳 -->
+<!-- Javascript, css 등의 처리를 기본적으로 수행 -->
+
+<head>
+    <title>::: index-01 페이지 :::</title>
+</head>
+<!-- 몸체(본문) 부분 -->
+<!-- 브라우저에 보이는 영역 -->
+
+<body>
+    <!-- 메뉴 만들기 -->
+    <!-- 링크 주소는 urls.py의 URL과 동일하게 작성.. -->
+    <nav>
+        <a href="/frontend/sample01">[sample]</a> |
+        <a href="/frontend/index01">[index01]</a> |
+        <a href="/frontend/index_css02">[index_css02]</a> |
+        <a href="/frontend/index_css03">[index_css03]</a>
+    </nav>
+
+    <h1>첫번째 크기 헤드라인-가장 큼</h1>
+    <h2>두번째 크기 헤드라인</h2>
+    <h3>세번째 크기 헤드라인</h3>
+    <h4>네번째 크기 헤드라인</h4>
+    <h5>다섯번째 크기 헤드라인-가장 작음</h5>
+
+    <p>문단 영역을 나타냅니다.</p>
+
+    <a href="http://www.google.com">구글 가기</a>
+
+    <!-- 수평선 그리기 : 시작태그와 끝태그 없이 시작과 동시에 끝..-->
+    <hr/>
+
+    <!-- 이미지 넣기 -->
+    <!-- src : 이미지의 위치 (웹 경로를 따름) -->
+    <img src="{% static 'frontendapp/images/img_01.png' %}">
+</body>
+
+</html>

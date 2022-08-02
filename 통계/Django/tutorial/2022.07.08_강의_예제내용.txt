@@ -1,0 +1,28 @@
+가상환경 : django 사용..
+1. 어제 만든 tutorial 작업 폴더 삭제
+2. 작업폴더 tutorial 만들기
+3. config 프로젝트 만들기
+   (웹서버 구동 테스트)
+4. firstapp 만들기
+5. settings.py 웹서버 환경설정
+6. 웹서버 최종 확인
+
+<프로그램 순서>
+1. app -> views.py에 함수 만들기
+2. config -> urls.py에 url생성 및 함수 매핑
+3. 서버 실행 -> url 입력
+
+<실습>
+index2 url 만들기
+index2 함수 만들기
+응답 데이터는 <p>index2 함수를 호출했습니다.</>
+
+
+
+
+
+
+
+
+
+

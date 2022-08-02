@@ -1,0 +1,56 @@
+<웹서버 진행 순서>
+1. 웹브라우저 : URL 입력 > 엔터 > 웹서버에 요청
+2. config > settings.py에서 도메인 확인
+3. config > urls.py에서 페이지분리 > app으로 나머지 뒤에 url 전달
+4. app > urls.py에서 url 받기 > views.py 함수 호출
+5. app > views.py에서 함수 실행
+         > models.py 데이터 처리 > views.py에 전달
+         > views.py에서 html 호출 > html에 데이터 담기
+6. 웹브라우저로 html 전달(return)
+
+
+--------------
+<가상환경만들기>
+* 최초 한번만 만들면 됩니다.
+(base 에서 )
+1. 가상환경 만들기 : codna create --name 가상환경이름
+2. 가상환경으로 들어가기 : conda activate 가상환경이름
+3. 커널만들기
+(가상환경 에서 )
+3. 가상환경 빠저나오기 : conda deactivate
+4. 가상환경으로 들어간 후 라이브러리 설치
+  : conda install -c conda-forge 라이브러리이름1, 라이브러리이름2...
+  또는,
+  : pip install 라이브러리이름1, 라이브러리이름2...
+5. 위에까지는 최초 한번만 진행....
+6. 이후 장고 프로젝트 시에는 
+  : conda activate 가상환경이름 
+  : 장고 작업폴더로 가기 : cd 작업폴더 위치로 이동
+  : code . 으로 vscode 열기
+
+--------------
+1. 작업디렉토리 만들기 : testproj
+(가상환경에서~~)
+2. 프로젝트 만들기 : config
+3. app 만들기 : testapp
+4. 요청 URL : http://127.0.0.1:8000/test/index1
+5. testpp에서 index1 url에 대한 함수 호출하여
+   아래 내용 응답해 주기
+   "안녕하세요~ 오늘은 비가 옵니다."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

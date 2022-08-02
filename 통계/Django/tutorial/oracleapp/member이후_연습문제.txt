@@ -1,0 +1,14 @@
+<dbapp 생성>
+1, model_pandas > cart.py 생성 후 DB 처리 함수 생성
+ - getCartList() : 전체조회
+ - getCart() : 한건조회
+
+2. view
+ - view_Cart_List() : 전체조회
+ - view_Cart : 한건조회
+
+3. html
+ - cart 폴더 생성
+   --> cart_list.html : 전체 조회
+   --> cart.html : 한건조회
+ 

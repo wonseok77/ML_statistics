@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>주문내역 리스트 조회하기</title>
+    <link rel="stylesheet" type="text/css" href="https://getbootstrap.kr/docs/5.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <!-- 제목 넣기 -->
+    <div class="container text-center" style="width:100%;">
+        <div class="row">
+            <div class="col">
+                <h3 style="font-size:15px;">주문 목록</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- 글쓰기 넣기 -->
+    <div class="container text-center" style="width:100%;">
+        <div class="row">
+            <div class="col">
+                <a href="/oracle/cart_insert_form/">[글쓰기]</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table 넣기 -->
+    <div class="container text-center" style="width:100%;">
+        <div class="row">
+            <div class="col">
+                <table border="1" width="100%" style="font-size:12px;">
+                    <tr style="background-color:yellow;">
+                        <th>회원아이디</th>
+                        <th>주문번호</th>
+                        <th>상품코드</th>
+                        <th>주문수량</th>
+                        <th>삭제</th>
+                    </tr>
+                    {% for d in info %}
+                    <tr>
+                        <td>
+                            <a href="http://127.0.0.1:8000/oracle/cart?pcart_no={{d.cart_no}}&pcart_prod={{d.cart_prod}}">
+                                {{d.cart_member}}</a>
+                        </td>
+                        <td>{{d.cart_no}}</td>
+                        <td>{{d.cart_prod}}</td>
+                        <td>{{d.cart_qty}}</td>
+                        <td>
+                            <a href="http://127.0.0.1:8000/oracle/cart_delete?pcart_no={{d.cart_no}}&pcart_prod={{d.cart_prod}}">
+                                [삭제]</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 페이지 처리 넣기 -->
+    <div class="container text-center" style="width:100%;">
+        <div class="row">
+            <div class="col">
+                <p>
+                    <ul class="pagination" style="justify-content:center; font-size:12px;">
+                        <!-- 이전 버튼 처리 시작 -->
+                        <!-- 
+                            "oracle:cart_list_page" 네임스페이스 기능...
+                            <네임스페이스> : 이름으로 찾아가는 기능
+                            urls.py에 
+                            -app_name="oracle" 등록, 
+                            -해당 페이지의 path에 : name="cart_list_page" 등록
+                        -->
+                        {% if is_prev %}
+                        <li class="page-item">
+                            <a class="page-link" href='{% url "oracle:cart_list_page" %}?page={{start_page | add:"-10"}}'>
+                                <span aria-hidden="true">[이전]</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                        <!-- 이전 버튼 처리 끝...... -->
+
+                        <!-- 페이지 처리 시작 -->
+                        {% for i in page_range %}
+                        <li class="page-item">
+                            <a class="page-link" href='{% url "oracle:cart_list_page" %}?page={{i}}'>{{i}}</a>
+                        </li>
+                        {% endfor %}
+                        <!-- 페이지 버튼 처리 끝...... -->
+
+                        <!-- 다음 버튼 처리 시작 -->
+                        {% if is_next %}
+                        <li class="page-item">
+                            <a class="page-link" href='{% url "oracle:cart_list_page" %}?page={{start_page | add:"10"}}'>
+                                <span aria-hidden="true">[다음]</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                        <!-- 다음 버튼 처리 끝...... -->
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://getbootstrap.kr/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

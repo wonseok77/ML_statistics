@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>주문 상세 조회</title>
+</head>
+
+<body>
+    <p>주문 상세</p>
+
+    <a href="/oracle/cart_update_form?pcart_no={{cart_no}}&pcart_prod={{cart_prod}}">[수정]</a>
+
+    <table border="1">
+        <tr>
+            <td style="background-color:yellow;">회원 아이디</td>
+            <td>{{cart_member}}</td>
+        </tr>
+        <tr>
+            <td style="background-color:yellow;">주문번호</td>
+            <td>{{cart_no}}</td>
+        </tr>
+        <tr>
+            <td style="background-color:yellow;">상품코드</td>
+            <td>{{cart_prod}}</td>
+        </tr>
+        <tr>
+            <td style="background-color:yellow;">주문수량</td>
+            <td>{{cart_qty}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>

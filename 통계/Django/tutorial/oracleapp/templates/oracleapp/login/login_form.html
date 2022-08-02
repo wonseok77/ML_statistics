@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>회원 로그인 화면</title>
+
+    <script>
+        function send() {
+            alert("로그인 처리로 이동");
+            document.getElementById("fm").submit()
+        }
+
+        function logout() {
+            alert("로그아웃 처리로 이동");
+            location.href = "/oracle/logout/"
+        }
+    </script>
+</head>
+
+<body>
+    {% if sMem_id == None %}
+    <form id="fm" method="post" action="/oracle/login/">
+        {% csrf_token %}
+        <p>로그인</p>
+        <hr> 아이디 : <input type="text" name="mem_id" value="">
+        <br> 패스워드 : <input type="password" name="mem_pass" value="">
+        <hr>
+        <button type="button" onclick="send()">[로그인]</button>
+    </form>
+    {% else %}
+    <p>로그인 정보 확인</p>
+    <hr/> {{sMem_name}} ( {{sMem_id}} ) 님 환영합니다.
+    <hr/>
+    <button type="button" onclick="logout();">로그아웃</button> {% endif %}
+</body>
+
+</html>

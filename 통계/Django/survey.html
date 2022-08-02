@@ -1,0 +1,61 @@
+<html>
+<head></head>
+<body>
+    <h2>* 커피전문점에 대한 소비자 인식조사 *</h2>
+    <form action="/chi2/surveyproc/" method="post">
+        {% csrf_token %}
+    <table>
+        <tr>
+            <td>귀하의 성별은?</td>
+            <td>
+                <label for="genM">남</label>
+                <input type="radio" id="genM" name="gender" value="남" checked="checked">
+                &nbsp
+                <label for="genF">여</label>
+                <input type="radio" id="genF" name="gender" value="여">
+            </td>
+        </tr>
+        <tr>
+            <td>귀하의 나이는?</td>
+            <td>
+                <label for="age10">10대</label>
+                <input type="radio" id="age10" name="age" value="10" checked="checked">
+                &nbsp
+                <label for="age20">20대</label>
+                <input type="radio" id="age20" name="age" value="20">
+                &nbsp
+                <label for="age10">30대</label>
+                <input type="radio" id="age30" name="age" value="30">
+                &nbsp
+                <label for="age40">40대</label>
+                <input type="radio" id="age40" name="age" value="40">
+                &nbsp
+                <label for="age50">50대</label>
+                <input type="radio" id="age50" name="age" value="50">
+            </td>
+        </tr>
+        <tr>
+            <td>선호하는 커피전문점은?</td>
+            <td>
+                <label for="startbucks">스타벅스</label>
+                <input type="radio" id="genM" name="co_survey" value="스타벅스" checked="checked">
+                &nbsp
+                <label for="coffeebean">커피빈</label>
+                <input type="radio" id="coffeebean" name="co_survey" value="커피빈">
+                &nbsp
+                <label for="ediya">이디아</label>
+                <input type="radio" id="ediya" name="co_survey" value="이디아">
+                &nbsp
+                <label for="tomntoms">탐앤탐스</label>
+                <input type="radio" id="tomntoms" name="co_survey" value="탐앤탐스">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <br>
+            <input type="submit" value="설문완료">
+            <input type="reset" value="초기화">
+        </tr>
+    </table>
+    </form>
+</body>

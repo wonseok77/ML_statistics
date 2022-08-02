@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>주문 정보 입력하기</title>
+
+    <script>
+        // 저장버튼 클릭시 호출되는 함수
+        function send() {
+            // popup 창 띄우기(경고창)
+            alert("입력합니다");
+            document.getElementById("fm").submit();
+        }
+    </script>
+</head>
+
+<body>
+    <form name="fm" id="fm" method="post" action="/oracle/cart_insert/">
+        <input type="hidden" name="pcart_member" value="{{pcart_member}}">
+        <input type="hidden" name="pcart_prod" value="{{pcart_prod}}"> {% csrf_token %}
+        <p>주문 정보 입력</p>
+
+        <table border="1">
+            <tr>
+                <td style="background-color:yellow;">주문수량</td>
+                <td><input type="text" name="cart_qty" value=""></td>
+            </tr>
+        </table>
+
+
+        <button type="button" onclick="send()">[저장]</button>
+    </form>
+</body>
+
+</html>

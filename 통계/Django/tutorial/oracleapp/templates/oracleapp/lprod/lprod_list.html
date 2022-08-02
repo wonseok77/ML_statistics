@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>상품분류정보 리스트 조회하기</title>
+</head>
+
+<body>
+    <p>상품분류정보 목록</p>
+    <table border="1">
+        <tr style="background-color:yellow;">
+            <th>상품분류순서</th>
+            <th>상품분류코드</th>
+            <th>상품분류명</th>
+        </tr>
+        {% for d in df_list %}
+        <tr>
+            <td>{{d.lprod_id}}</td>
+            <td>{{d.lprod_gu}}</td>
+            <td>
+                <a href="http://127.0.0.1:8000/oracle/lprod?lprod_gu={{d.lprod_gu}}">{{d.lprod_nm}}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

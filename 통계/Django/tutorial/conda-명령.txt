@@ -1,0 +1,2 @@
+    - 주피터노트북 설치 : pip install jupyter notebook
+    - 가상환경에 커널 연결하기 : python -m ipykernel install --user --name django --display-name django_kernel
