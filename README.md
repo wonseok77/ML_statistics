@@ -33,5 +33,24 @@
         - 선형회귀 분석 : lr.coef_ (기울기) , lr.intercept_ (y절편)
         - 다항회귀 : 2차항이 포함된 회귀식
         - 다항회귀 : 선형회귀의 결정력, 데이터 분포 등을 보고 성능향상을 위해 독립변수로 이차항을 추가하거나 해서 사용
-        - 다항회귀 과적합 해결법 : 특성(독립변수 항목) 이 추가되어야 한다  
+        - 다항회귀 과적합 해결법 : 특성(독립변수 항목) 이 추가되어야 한다
+-6day
+    - 01_교차검증
+        - 배열로 변경 : to_numpy()
+        - 교차검정을 하는 이유
+            - 교차검정을 하지 않고 성능을 개선하는 경우에는 보통 test데이터 한세트 만으로 하이퍼 파라미터를 수정한다
+            - 이 과정에서 사람의 개입이 많아지게 된다
+            - 따라서 train데이터를 다시 fold를 나눠 train과 테스트를 교차하며 검증하면 사람의 개입이 적어지게 되고
+            - train과 test의 성능차이를 최대한 좁혀 일반화 성능이 좋아지게 된다.
+        - cross_validate
+            - from sklearn.model_selection import cross_validate
+            - scores 값 : fit_time : 훈련소요시간 , score_time : 스코어에대한 검증시간 , test_score : 각 fold마다의 평균최종값
+            - test_score의 평균값이 교차검증성능이다
+        - 폴드 설정 및 제어(분할기 = splitter = StratifiedKFold)
+            - from sklearn.model_selection import StratifiedKFold
+            - cross_validate의 cv에 분할기 속성을 넣어주면 된다
+                - cv : 분할기 속성
+                - 분할기로 StratifiedKFold 클래스 사용
+                - 속성값이 없을경우 기본 fold는 5, 기본 섞지는 않음
+                - 
             
