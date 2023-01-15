@@ -1,4 +1,4 @@
-# kdigital_ML_statistic
+# ML_statistic
 ### 내재화 (참고서적 : 혼자공부하는 머신러닝 & 딥러닝)
 ### 머신러닝
 - 1day
